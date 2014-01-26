@@ -7,12 +7,18 @@ package com.infinitescaling;
 
 import org.apache.hadoop.hive.ql.exec.Description;
 import org.apache.hadoop.hive.ql.exec.UDF;
+import org.apache.hadoop.hive.ql.udf.UDFType;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.io.IntWritable;
 import java.util.HashMap;
 import java.util.Map;
 
 
+@UDFType(deterministic = true)
+@Description(
+  name="dldistance",
+  value="dldistance('book', 'cook') -> 1, dldistance('abc', 'ca') -> 2.",
+  extended="SELECT dldistance(name, first_name) from foo;")
 class DamerauLevenshtein extends UDF {
 
     /**

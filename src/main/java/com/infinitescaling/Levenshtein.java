@@ -7,9 +7,15 @@ package com.infinitescaling;
 
 import org.apache.hadoop.hive.ql.exec.Description;
 import org.apache.hadoop.hive.ql.exec.UDF;
+import org.apache.hadoop.hive.ql.udf.UDFType;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.io.IntWritable;
 
+@UDFType(deterministic = true)
+@Description(
+  name="ldistance",
+  value="ldistance('book', 'cook') -> 1.",
+  extended="SELECT ldistance(col1, col2) from foo;")
 class Levenshtein extends UDF {
 
     /**
