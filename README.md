@@ -1,6 +1,6 @@
-# Hive UDF Examples
+# Hive UDF library
 
-As the name suggests, this is yet another Hive UDF library. Implementing algorithms that don't already exist in HiveSwarm, brickhouse etc.
+As the name suggests, this is yet another Hive UDF library. Consists of algorithms that don't already exist in HiveSwarm, brickhouse etc.
 
 # Hive UDF's implemented
 Levenstein Distance
