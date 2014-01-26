@@ -2,6 +2,10 @@
 
 As the name suggests, this is yet another Hive UDF library. Implementing algorithms that don't already exist in HiveSwarm, brickhouse etc.
 
+# Hive UDF's implemented
+Levenstein Distance
+Damerau-Levenshtein Distance
+
 ## Compile
 
 ```
@@ -24,7 +28,7 @@ mvn assembly:single
 ```
 %> hive
 hive> ADD JAR target/NAME_OF_ASSEMBLED.jar;
-hive> create temporary function ldistance as 'com.infinitescaling.Levenshtein';
+hive> SOURCE sourceAll.hql;
 hive> select ldistance(full_name, first_name) from people limit 10;
 
 ```
